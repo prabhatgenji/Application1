@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+   http://www.springframework.org/schema/beans/spring-beans.xsd">
+   
+   <bean id="suhm"   class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+      <property name="mappings">
+         <props>
+           <prop key="home.htm">wc</prop>
+           <prop key="wish.htm">wsh</prop>
+           <prop key="contact_us.htm">cus</prop>
+           <prop key="about_us.htm">abt</prop>
+         </props>
+      </property>
+   </bean>
+   <!-- Controller class -->
+   <bean id="wc" class="com.nt.controller.HomeViewController"/>
+   <bean id="wsh" class="com.nt.controller.WishViewController"/>
+   <bean id="cus" class="com.nt.controller.ContactViewController"/>
+   <bean id="abt" class="com.nt.controller.AboutviewController"/>
+   <!-- ViewResolver -->
+   <bean id="ivr" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+      <property name="prefix"  value="/WEB-INF/pages/"/>
+      <property name="suffix"  value=".jsp"/>
+   </bean>
+  
+  
+   
+   
+   </beans>
